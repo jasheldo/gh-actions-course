@@ -11,8 +11,9 @@ jobs:
       - name: Print folders
         run: ls -la
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: '14'
+          node-version: '23.x'
       - name: Install dependencies
-        run: npm install
+        run: npm ci
+        working-directory: ./04-using-actions/react-app/
