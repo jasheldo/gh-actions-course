@@ -8,4 +8,16 @@ jobs:
     steps:
       - name: Show OS
         run: |
-          echo "Running on ${{ runner.os }} or $RUNNER_OS"
+          echo "Running on ${{ runner.os }}"
+  windows-echo:
+    runs-on: windows-latest
+    steps:
+      - name: Show OS
+        run: |
+          echo "Running on ${{ runner.os }}"
+  macos-echo:
+    runs-on: macos-latest
+    steps:
+      - name: Show OS
+        run: |
+          echo "Running on ${{ runner.os }}"
