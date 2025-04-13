@@ -1,0 +1,22 @@
+name: 08 Variables
+
+on:
+  push:
+  workflow_dispatch:
+
+env:
+  GLOBAL_VAR: 'I am a global env var'
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    env:
+      JOB_VAR: 'I am a job env var'
+    steps:
+      - name: Print Env Variables
+        env:
+          STEP_VAR: 'I am a step env var'
+        run: |
+          echo "Step env var ${{ env.STEP_VAR }}"
+          echo "Job env var ${{ env.JOB_VAR }}"
+          echo "Global env var ${{ env.GLOBAL_VAR }}"
